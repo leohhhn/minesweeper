@@ -5,7 +5,7 @@ class Cell {
     this.indexI = 0;
     this.indexJ = 0;
     this.width = width;
-    if (random(1) < 0.2) {
+    if (random(1) < 0.25) {
       this.mine = true;
     } else {
       this.mine = false;

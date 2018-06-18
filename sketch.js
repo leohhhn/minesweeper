@@ -80,11 +80,12 @@ function mousePressed() {
 }
 
 function zero(x) {
+  x.revealed = true;
   if (x.mineNum == 0) {
-    x.revealed = true;
-    for (let i = x.indexI - 1; i < x.indexI + 1; i++) {
-      for (let j = x.indexJ - 1; j < x.indexJ + 1; j++) {
-        zero(x);
+    for (let i = x.indexI - 1; i <= x.indexI + 1; i++) {
+      for (let j = x.indexJ - 1; j <= x.indexJ + 1; j++) {
+        if (!grid[i][j].revealed)
+          zero(grid[i][j]);
       }
     }
   } else {
